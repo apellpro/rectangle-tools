@@ -27,3 +27,7 @@ def main():
         return
     print(f'Площадь пересечения: {intersection(*args)}')
     print(f'Площадь объединения: {union(*args)}')
+
+
+if __name__ == '__main__':
+    main()
