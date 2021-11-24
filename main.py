@@ -1,15 +1,10 @@
 def intersection(x1, y1, x2, y2, x3, y3, x4, y4) -> int:
     """Площадь пересечения прямоугольников"""
-    width, height = 0, 0
-    if x1 <= x3 <= x2:
-        width = x2 - x3
-    if x3 <= x1 <= x4:
-        width = x4 - x1
-    if y1 >= y3 >= y2:
-        height = y3 - y2
-    if y3 >= y1 >= y4:
-        height = y1 - y4
-    return abs(width * height)
+    width = min(x2, x4) - max(x1, x3)
+    height = min(y1, y3) - max(y2, y4)
+    if width < 0 or height < 0:
+        return 0
+    return width * height
 
 
 def main():
