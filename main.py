@@ -1,3 +1,12 @@
+def intersection(x1, y1, x2, y2, x3, y3, x4, y4) -> int:
+    """Площадь пересечения прямоугольников"""
+    width = min(x2, x4) - max(x1, x3)
+    height = min(y1, y3) - max(y2, y4)
+    if width < 0 or height < 0:
+        return 0
+    return width * height
+
+
 def main():
     args = input('Введите 8 целых чисел (координаты): ')
     try:
@@ -8,5 +17,5 @@ def main():
     if len(args) != 8:
         print('Введено неправильное количество аргументов.')
         return
-    print(f'Площадь пересечения: {0}')
+    print(f'Площадь пересечения: {intersection(*args)}')
     print(f'Площадь объединения: {0}')
