@@ -1,4 +1,4 @@
-from functions import intersection, union
+from .functions import intersection, union
 
 
 def main():
