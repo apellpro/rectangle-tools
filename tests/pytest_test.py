@@ -1,3 +1,4 @@
+import pytest
 from ..functions import intersection, union
 
 
@@ -25,3 +26,5 @@ def test_one_in_one_intersection():
 def test_overlap():
     assert intersection(0, 100, 100, 0, 0, 100, 100, 0) == 10000
     assert union(0, 100, 100, 0, 0, 100, 100, 0) == 10000
+    with pytest.raises(TypeError):
+        assert intersection('a', 0, 0, 0, 0, 0, 0, 0) == 0

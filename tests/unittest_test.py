@@ -5,9 +5,9 @@ import unittest
 from sys import path
 path.append('..')
 try:
-    from ..functions import intersection, union
+    from ..functions import intersection, union     # не сработает
 except ImportError:
-    from functions import intersection, union
+    from functions import intersection, union     # сработает из-за .. в path
 
 
 class Testing(unittest.TestCase):
